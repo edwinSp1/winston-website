@@ -11,13 +11,229 @@
     <meta name="author" content="GitHub Codespaces">
     <meta name="generator" content="GitHub Codespaces">
     <meta name="theme-color" content="#000000">
-    <title>{% block title %}{{ title }} | GitHub Codespaces ♥️ Django{% endblock %}</title>
+    <title>{% block title %}{{ title }} | Home{% endblock %}</title>
     
     <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+    h1{
+        display:block;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end: 18;
+        margin-top: 4.5em;
+        text-align: left;
+        padding-left: 1.25em;
+        font-family: calibri; 
+        font-size: 3.125em;
+        color: red;
+    }
+    p{
+        grid-row-start: 7;
+        grid-row-end: 8;
+        grid-column-start: 1;
+        grid-column-end: 18;
+    }
+    sus{
+        grid-row-start: 8;
+        grid-row-end: 9;
+        grid-column-start: 1;
+        grid-column-end: 18;
+    }
+    sus2{
+        grid-row-start: 9;
+        grid-row-end: 10;
+        grid-column-start: 1;
+        grid-column-end: 18;
+    }
+    dh1{
+        display:block;
+        grid-row-start: 12;
+        grid-row-end: 13;
+        grid-column-start: 1;
+        grid-column-end: 18;
+        margin-top: 3.75em;
+        text-align: left;
+        padding-left: 1.25em;
+        font-family: calibri; 
+        font-size: 3.125em;
+        color: red;
+        font-weight: bold;
+    }
+    dp{
+        grid-row-start: 20;
+        grid-row-end: 21;
+        grid-column-start: 1;
+        grid-column-end: 18;
+    }
+    dsus{
+        grid-row-start: 21;
+        grid-row-end: 22;
+        grid-column-start: 1;
+        grid-column-end: 18;
+    }
+    dsus2{
+        grid-row-start: 22;
+        grid-row-end: 23;
+        grid-column-start: 1;
+        grid-column-end: 18;
+    }
+    body{
+        background-color: black;
+    }
+    *{
+        text-decoration: none;
+    }
+    .navbar{
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end: 32;
+        background: crimson; 
+        font-family: calibri; 
+        padding-right: 15px;
+        padding-left: 15px; 
+        font-size: 25px;
+    }
+    .navdiv{
+        display: flex;
+        align-items: center; 
+        justify-content: space-between; 
+    }
+    .logo a{
+        font-size: 35px; 
+        font-weight: 600; 
+        color: white;
+    }
+    li{
+        list-style: none; 
+        display: inline-block;
+    }
+    li a{
+        color: white; 
+        font-size: 18px; 
+        font-weight: bold; 
+        margin-right: 25px;
+    }
+    button{
+        display:block;
+        grid-row-start: 10;
+        grid-row-end: 11;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        background-color: white; 
+        margin-top: 1.2em;
+        margin-left: 32px; 
+        border-radius: 10px; 
+        padding: 10px; 
+        width: 130px;
+        height: 40px;
+    }
+    button a{
+        color: black; 
+        font-weight: bold; 
+        font-size: 15px;
+    }
+    .gridcontainer{
+        display: grid;
+        grid-template-rows: 5.625em 3.75em 3.75em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em 2.1875em;
+        grid-template-columns: 1.5625em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em 6.25em;
+    }
+    .homepg {
+        display:block;
+        margin: 0em;
+        font-family: calibri; 
+        text-align: left;
+        font-size: 1.5625em;
+        padding-left: 2.5em;
+        color: white;
+    }
+    .homeimg{
+        padding-left: 50px;
+        grid-row-start: 3;
+        grid-row-end: 3;
+        grid-column-start: 15;
+        grid-column-end: 15;
+        margin-top: 1.5em;
+    }
+    .homeimg2{
+        padding-left: 50px;
+        grid-row-start: 18;
+        grid-row-end: 18;
+        grid-column-start: 14;
+        grid-column-end: 14;
+        margin-top: 1.5em;
+    }
+    @media only screen and (max-width: 1750px) {
+        .homeimg{
+            grid-row-start: 3;
+            grid-row-end: 3;
+            grid-column-start: 13;
+            grid-column-end: 13;
+        }
+        .homeimg2{
+            grid-row-start: 18;
+            grid-row-end: 18;
+            grid-column-start: 12;
+            grid-column-end: 12;
+        }
+    }
+    @media only screen and (max-width: 1540px) {
+        .homeimg{
+            grid-row-start: 3;
+            grid-row-end: 3;
+            grid-column-start: 11;
+            grid-column-end: 11;
+        }
+        .homeimg2{
+            grid-row-start: 18;
+            grid-row-end: 18;
+            grid-column-start: 10;
+            grid-column-end: 10;
+        }
+    }
+    @media only screen and (max-width: 1300px) {
+        .gridcontainer {
+            display: block;
+        }
+        .homeimg, .homeimg2 {
+            width: 50%;
+        } 
+    }
+    </style>
 </head>
 
 <body>
-    <h1>Hello guys</h1>
+    <div class="gridcontainer">
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="#">Free Asset Bazaar</a> </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/2DAssets">2D Assets</a></li>
+                    <li><a href="/3DAssets">3D Assets</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Donate">Donate</a></li>
+                    <!--
+                    <button><a href="#">SignIn</a></button>
+                    <button><a href="#">SignUp</a></button>
+                    -->
+                </ul>
+            </div>
+        </nav>
+        <h1>Free Assets For All</h1>
+        <p class="homepg">Completely free assets requiring no account or payment methods!</p>
+        <sus class = "homepg">No need to give credit either!</sus>
+        <sus2 class = "homepg">Just click download, and enjoy your new assets</sus2>
+        <img class = "homeimg" src="{% static 'image.png' %}"/>
+        <button class = "homebutton"><a href="#">Get Started</a></button>
+        <dh1>2D and 3D</dh1>
+        <dp class="homepg">2D assets, 3D assets,all given to you in one website</dp>
+        <dsus class = "homepg">all given to you in the original format</dsus>
+        <dsus2 class = "homepg">(.aseprite, .blend, .png)</dsus2>
+        <img class = "homeimg2" src="{% static 'SpriteSheetThing.png' %}"/>
+    </div>
 </body>
-
 </html>
+message.txt
+7 KB

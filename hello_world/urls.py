@@ -26,6 +26,11 @@ urlpatterns = [
     path("", core_views.index),
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('upload', core_views.upload),
+    path('2DAssets', core_views.assets2D),
+    path('3DAssets', core_views.assets3D),
+    path('Donate', core_views.donate),
+    path('About', core_views.about),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
