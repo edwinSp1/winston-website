@@ -16,7 +16,9 @@ def upload(request):
         path = f'{BASE_DIR}/hello_world/media/{file.name}'
         with open(path, 'wb+') as f:
             f.write(file.read())
-    return HttpResponse('thanks bro. pon')
+        return HttpResponse('thanks bro. pon')
+
+    return render(request, 'upload.html')
 
 def assets2D(req):
     context = {
