@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from ..settings import BASE_DIR
+from ..models import Asset
 
 def index(request):
     context = {
@@ -9,13 +10,27 @@ def index(request):
     }
     return render(request, "index.html", context)
 
+def download(file):
+    path = f'{BASE_DIR}/hello_world/static/media/{file.name}'
+    with open(path, 'wb+') as f:
+        f.write(file.read())
 @csrf_exempt
 def upload(request):
     if request.method == 'POST':
-        file = request.FILES['file']
-        path = f'{BASE_DIR}/hello_world/media/{file.name}'
-        with open(path, 'wb+') as f:
-            f.write(file.read())
+        form = request.POST
+        files = request.FILES
+        print(form.keys())
+        print(files.keys())
+        asset = files['asset']
+        thumbnail = files['thumbnail']
+        download(asset); download(thumbnail)
+        Asset.objects.create(
+            asset_type=form['type'], 
+            asset_desc=form['description'],
+            asset_loc=asset.name,
+            thumbnail_loc=thumbnail.name
+        )
+        #wtfsdfg
         return HttpResponse('thanks bro. pon')
 
     return render(request, 'upload.html')
