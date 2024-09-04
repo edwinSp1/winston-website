@@ -14,23 +14,23 @@ def download(file):
     path = f'{BASE_DIR}/hello_world/static/media/{file.name}'
     with open(path, 'wb+') as f:
         f.write(file.read())
+
 @csrf_exempt
 def upload(request):
     if request.method == 'POST':
         form = request.POST
         files = request.FILES
-        print(form.keys())
-        print(files.keys())
         asset = files['asset']
         thumbnail = files['thumbnail']
+
         download(asset); download(thumbnail)
+
         Asset.objects.create(
             asset_type=form['type'], 
             asset_desc=form['description'],
             asset_loc=asset.name,
             thumbnail_loc=thumbnail.name
         )
-        #wtfsdfg
         return HttpResponse('thanks bro. pon')
 
     return render(request, 'upload.html')
