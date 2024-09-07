@@ -1,0 +1,41 @@
+{% load django_browser_reload %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GitHub Codespaces ♥️ Django">
+    <meta name="author" content="GitHub Codespaces">
+    <meta name="generator" content="GitHub Codespaces">
+    <meta name="theme-color" content="#000000">
+    <title>{% block title %} TITLE-NOT SET {% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">Free Asset Bazaar</a> </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/2DAssets">2D Assets</a></li>
+                <li><a href="/3DAssets">3D Assets</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a href="/Donate">Donate</a></li>
+                <!--
+                <button><a href="#">SignIn</a></button>
+                <button><a href="#">SignUp</a></button>
+                -->
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+</body>
+
+</html>
